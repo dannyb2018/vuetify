@@ -330,6 +330,7 @@ describe('VTextField.ts', () => { // eslint-disable-line max-statements
     const change = jest.fn()
     let value = 'test'
     const component = {
+      // eslint-disable-next-line sonarjs/no-identical-functions
       render (h) {
         return h(VTextField, {
           on: {
@@ -857,5 +858,14 @@ describe('VTextField.ts', () => { // eslint-disable-line max-statements
     wrapper.vm.focus()
 
     expect(wrapper.vm.computedColor).toBe('primary')
+  })
+
+  it('should keep -0 in input when type is number', async () => {
+    const wrapper = mountFunction({
+      propsData: { type: 'number', value: -0 },
+    })
+
+    const input = wrapper.find('input')
+    expect(input.element.value).toBe('-0')
   })
 })
