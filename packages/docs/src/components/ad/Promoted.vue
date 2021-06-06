@@ -3,7 +3,10 @@
     v-if="current"
     class="mb-8"
   >
-    <a v-bind="adAttrs">
+    <a
+      v-bind="adAttrs"
+      @click="onClick"
+    >
       <app-ad
         v-bind="$attrs"
         class="v-vuetify-ad--promoted"
@@ -62,8 +65,13 @@
     },
 
     computed: {
+      ads () {
+        const all = Ad.computed.ads.call(this)
+
+        return all.filter(ad => !!ad.metadata.images?.background?.url)
+      },
       bg () {
-        return this.current.metadata.images.background.url
+        return this.images?.background?.url
       },
       // Promoted ads have less space
       // available for descriptions
@@ -86,10 +94,24 @@
             : description
         )
       },
+      images () {
+        return this.current.metadata?.images
+      },
       logo () {
-        const { logo, preview } = this.current.metadata.images
+        return (
+          this.images?.logo?.url ||
+          this.images?.preview?.url
+        )
+      },
+    },
 
-        return (logo || preview).url
+    methods: {
+      onClick () {
+        this.$gtag.event('click', {
+          event_category: 'vuetify-ads',
+          event_label: this.slug,
+          value: 'promoted',
+        })
       },
     },
   }

@@ -6,7 +6,7 @@ meta:
 related:
   - /introduction/why-vuetify/
   - /getting-started/frequently-asked-questions/
-  - /introduction/why-vuetify/
+  - /getting-started/browser-support/
 ---
 
 # Installation
@@ -16,6 +16,12 @@ Get started with Vuetify, the world’s most popular Vue.js framework for buildi
 <entry-ad />
 
 ## Vue CLI Install
+
+<alert type="error">
+
+  The current version of Vuetify does not support Vue 3. Support for Vue 3 will come with the release of [Vuetify v3](/introduction/roadmap/#v30-titan). When creating a new project, please ensure you selected Vue 2 from the Vue CLI prompts, or that you are installing to an existing Vue 2 project.
+
+</alert>
 
 <alert type="warning">
 
@@ -101,12 +107,12 @@ npm install vuetify
 ```
 
 ```bash
-yarn add sass sass-loader deepmerge -D
+yarn add sass@~1.32 sass-loader deepmerge -D
 # OR
-npm install sass sass-loader deepmerge -D
+npm install sass@~1.32 sass-loader deepmerge -D
 ```
 
-Once installed, locate your `webpack.config.js` file and copy the snippet below into the rules array. If you have an existing sass rule configured, you may need to apply some or all of the changes below. If you are you looking to utilize the vuetify-loader for treeshaking, ensure that you are on version >=4 of Webpack. You can find more information on setting it up with webpack on the [Treeshaking](/features/treeshaking/) page.
+Once installed, locate your `webpack.config.js` file and copy the snippet below into the rules array. If you have an existing sass rule configured, you may need to apply some or all of the changes below. If you are looking to utilize the vuetify-loader for treeshaking, ensure that you are on version >=4 of Webpack. You can find more information on setting it up with webpack on the [Treeshaking](/features/treeshaking/) page.
 
 ```js
 // webpack.config.js
@@ -126,7 +132,7 @@ module.exports = {
               implementation: require('sass'),
               indentedSyntax: true // optional
             },
-            // Requires sass-loader@^8.0.0
+            // Requires >= sass-loader@^8.0.0
             options: {
               implementation: require('sass'),
               sassOptions: {

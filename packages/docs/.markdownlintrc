@@ -11,6 +11,7 @@
       "acuity-calendar",
       "alert",
       "app-img",
+      "api-table",
       "backmatter",
       "become-sponsor",
       "br",
@@ -45,6 +46,7 @@
       "vue-jobs",
       "vuetify-comparison",
       "vuetify-projects",
+      "vuetify-ui-kits",
       "why-vuetify-cards",
       "wireframe-examples"
     ]

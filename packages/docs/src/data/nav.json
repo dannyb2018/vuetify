@@ -34,7 +34,7 @@
       "bidirectionality",
       "breakpoints",
       "global-config",
-      "icons",
+      "icon-fonts",
       "internationalization",
       "layouts",
       "presets",
@@ -106,6 +106,7 @@
           "inputs",
           "overflow-btns",
           "radio-buttons",
+          "range-sliders",
           "selects",
           "sliders",
           "switches",
@@ -201,7 +202,8 @@
     "items": [
       "jobs-for-vue",
       "made-with-vuetify",
-      "themes"
+      "themes",
+      "ui-kits"
     ]
   },
   {
