@@ -25,6 +25,8 @@ A simple text field with placeholder and/or label.
 
 - [v-text-field](/api/v-text-field)
 
+<api-section page="components/text-fields" />
+
 ## Examples
 
 ### Props
@@ -49,7 +51,7 @@ You can optionally change a text field into any color in the Material design pal
 
 #### Dense
 
-You can reduces the text field height with **dense** prop.
+You can reduce the text field height with **dense** prop.
 
 <example file="v-text-field/prop-dense" />
 
@@ -163,7 +165,7 @@ Full width text fields allow you to create boundless inputs. In this example, we
 
 #### Password input
 
-Using the HTML input **type** [password](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/password)can be used with an appended icon and callback to control the visibility.
+Using the HTML input **type** [password](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/password) can be used with an appended icon and callback to control the visibility.
 
 <example file="v-text-field/misc-password" />
 
